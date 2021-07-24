@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+ <nav class="navbar-expand-lg bg-light">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="navbar-brand"><a class="nav-link text-dark" href="">My Mind</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">Editor </a></li>
+      <!-- <li class="nav-item"><a class="nav-link" href="">Buy me a Coffee</a></li> -->
+      <li class="nav-item"><a class="nav-link text-dark" href="">Share</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">User Manual</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">Settings</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">About</a></li>
+    </ul>
+  </div>
+ </nav>
+ {% block content %} {% endblock %}
+</html>
