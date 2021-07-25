@@ -2,8 +2,29 @@
 
 {% block content %}
 
-<div>
-  {{ data }}
-</div>
+<div id="proj" class=container>
 
+    {{ html }}
+
+</div>
+<form method="POST">
+<button class="btn btn-primary" onclick="edit()">Edit</button>
+<textarea id="editor" name="" cols="30" rows="10">
+    {{ md }}
+</textarea>
+</form>
+<script>
+    //render Markdown
+   const proj = document.getElementById('proj');
+    proj.innerHTML = proj.innerText;
+
+
+    //Edit Function
+    /*function edit(){
+        const editor = document.getElementById('editor');
+        proj.innerHTML = editor.value;
+    };
+     
+</script>
 {% endblock %}
+
