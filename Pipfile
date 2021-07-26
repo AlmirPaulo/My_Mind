@@ -8,6 +8,7 @@ simple-websocket = "*"
 flask = "*"
 requests = "*"
 pysimplegui = "*"
+flask-cors = "*"
 
 [dev-packages]
 

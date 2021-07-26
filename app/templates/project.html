@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+<title>{{ title }}</title>
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div id="project" class="container">
+
+        {{ html }}
+
+    </div>
+    <form method="POST">
+        <textarea id="editor" name="editor" cols="100" rows="10">
+            {{ md }}
+        </textarea>
+        <button class="btn btn-primary" onclick="edit()">Edit</button>
+    </form>
+</div>
+<script>
+    //render Markdown
+   const project = document.getElementById('project');
+    project.innerHTML = project.innerText;
+
+</script>
+{% endblock %}

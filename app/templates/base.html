@@ -4,21 +4,47 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Mind</title>
+  {% block head %} {% endblock %}
 </head>
 <body>
  <nav class="navbar-expand-sm bg-light">
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
       <li class="navbar-brand"><a class="nav-link text-dark" href="">My Mind</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="">Editor </a></li>
-      <!-- <li class="nav-item"><a class="nav-link" href="">Buy me a Coffee</a></li> -->
-      <li class="nav-item"><a class="nav-link text-dark" href="">Share</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="">User Manual</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="">Settings</a></li>
       <li class="nav-item"><a class="nav-link text-dark" href="">About</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">Share</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">User Guide</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="">Settings</a></li>
+      <!-- <li class="nav-item"><a class="nav-link" href="">Buy me a Coffee</a></li> -->
+      <li class="nav-item">
+          <form action={{ url_for('find') }}>
+            <div class="row m-2">
+                <div class="col-10">
+                    <input class="form-control" name="find" type="text" placeholder="Create or find a project">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary btn-sm">Go!</button>
+                </div>
+            </div>
+         </form>
+      </li>
     </ul>
   </div>
  </nav>
  {% block content %} {% endblock %}
+ <!-- <script id='search_script'> -->
+ <!--    function search(){ -->
+ <!--        const search = document.getElementById('search').value; -->
+ <!--        if (search.trim() !== ''){ -->
+ <!--        const xhr = new XMLHttpRequest(); -->
+ <!--        const url = `http://127.0.0.1:5123/search/{search}.md`; -->
+
+ <!--        xhr.open("POST", url, true); -->
+ <!--        //Send the proper header information along with the request -->
+<!-- xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); -->
+ <!--        xhr.send(search); -->
+ <!--        } -->
+ <!--    }; -->
+
+ <!-- </script> -->
 </html>

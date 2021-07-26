@@ -1,45 +1,61 @@
-from flask import render_template, Flask
-from pathlib import Path
+from flask import render_template, Flask, request, redirect, url_for
+from crud import read_md, create_md, update_md, Path
 import logging, json, requests
-
 
 app = Flask(__name__)
 
-PROJECTS = Path('./projects')
-# CONFIG = Path('config.json')
-
-#Functions
-def read_md(file):
-    file_path = PROJECTS/file
-    f = open(str(file_path), 'r')
-    return f.read()
-
-def create_md():
-    pass
+url = "https://api.github.com/markdown"
 
 #Routes
-@app.route('/<string:project>')
+@app.route('/project/<string:project>', methods=['GET', 'POST'])
 def project(project):
-    url = "https://api.github.com/markdown"
+    if request.method == 'POST':
+        text = request.form.get('editor')
+        update_md(project, text)
+            
+    title = project
     dict_data =  {"text":read_md(project)}
     json_data = json.dumps(dict_data)
     req = requests.post(url, data=json_data)
     output = req.content.decode('utf-8')
-    print(type(output))
-    return render_template('index.html', html=output, md=read_md(project).strip())
 
+    return render_template('project.html', title=title, html=output, md=read_md(project))
 
-@app.route('/editor')
-def edit():
-    pass
+@app.route('/find')
+def find():
+    search = request.url   
+    parse = search.split('=')
+    if Path(f'./projects/{parse[1]}').is_file() == False:
+        create_md(parse[1])
+    return redirect(url_for('project', project=parse[1]))
+
+@app.route('/')
+def home():
+    dict_data =  {"text":read_md('default/welcome.md')}
+    json_data = json.dumps(dict_data)
+    req = requests.post(url, data=json_data)
+    output = req.content.decode('utf-8')
+
+    return render_template('index.html', welcome=output)
+
 
 @app.route('/about')
 def about():
-    pass
+    dict_data =  {"text":read_md('default/about.md')}
+    json_data = json.dumps(dict_data)
+    req = requests.post(url, data=json_data)
+    output = req.content.decode('utf-8')
 
-@app.route('/manual')
+    return render_template('about.html', about=output)
+
+@app.route('/guide')
 def manual():
-    pass
+    dict_data =  {"text":read_md('default/guide.md')}
+    json_data = json.dumps(dict_data)
+    req = requests.post(url, data=json_data)
+    output = req.content.decode('utf-8')
+
+    return render_template('guide.html', guide=output)
 
 @app.route('/settings')
 def settings():
@@ -53,4 +69,4 @@ def share():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port='5123')
