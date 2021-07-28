@@ -4,13 +4,14 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ url_for('static', filename='brain.png')}}">
   {% block head %} {% endblock %}
 </head>
 <body>
  <nav class="navbar-expand-sm bg-light">
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
-      <li class="navbar-brand"><a class="nav-link text-dark" href="">My Mind</a></li>
+        <li class="navbar-brand"><a class="nav-link text-dark" href=""><img width='50%'  src="{{ url_for('static', filename='brain.png')}}" alt=""></a></li>
       <li class="nav-item"><a class="nav-link text-dark" href="">About</a></li>
       <li class="nav-item"><a class="nav-link text-dark" href="">Share</a></li>
       <li class="nav-item"><a class="nav-link text-dark" href="">User Guide</a></li>
@@ -32,19 +33,7 @@
   </div>
  </nav>
  {% block content %} {% endblock %}
- <!-- <script id='search_script'> -->
- <!--    function search(){ -->
- <!--        const search = document.getElementById('search').value; -->
- <!--        if (search.trim() !== ''){ -->
- <!--        const xhr = new XMLHttpRequest(); -->
- <!--        const url = `http://127.0.0.1:5123/search/{search}.md`; -->
-
- <!--        xhr.open("POST", url, true); -->
- <!--        //Send the proper header information along with the request -->
-<!-- xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); -->
- <!--        xhr.send(search); -->
- <!--        } -->
- <!--    }; -->
-
- <!-- </script> -->
+ <footer class="container text-muted">
+     <div>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+ </footer>
 </html>

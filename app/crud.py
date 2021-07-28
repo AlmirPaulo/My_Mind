@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 
 PROJECTS = Path('./projects')
@@ -19,5 +20,6 @@ def update_md(file, text):
     f = open(str(file_path), 'w')
     return f.write(text)
 
-def delete_md():
-    pass
+def delete_md(file):
+    return os.remove(f'./projects/{file}')
+    

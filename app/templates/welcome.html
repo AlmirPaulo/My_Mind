@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<h1>Welcome to My Mind!</h1>
+
+<p>Here is the projects you are working at:</p>
+<ol>
+  {% if projects %}
+  {% for project in projects %}
+    
+  <li><a href="{{ 'project/'+project }}">{{ project }}</a></li>
+
+  {% endfor %}
+  {% else %}
+  <h2 class="text-danger"> No Projects yet!</h2>
+  {% endif %}
+  <p>We hope you have a good working Session!</p>
+</ol>
+</div>
+
+
+{% endblock %}

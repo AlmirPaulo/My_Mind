@@ -23,5 +23,24 @@ Now you can visit "http://localhost:5123" to see a page like this:
 
 The rest of the functionalities is pretty intuitives once you know some Markdown and have some experience with Notion like apps. For further instructions check the User Manual. 
 
+## Technologies
+
+* Python
+* Flask
+* Github API
+* Javascript
+* Bootstrap
+
+## Plans for the Future
+
+[] Implement the the "Shared" feature.
+[] Include Unsplash API for an easy images feature.
+[] A way to work with My Mind in Mobile.
+[] Easy import/export Markdown projects.
+[] Dark Mode
+
 
 ## Contribute
+
+
+

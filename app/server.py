@@ -1,5 +1,5 @@
 from flask import render_template, Flask, request, redirect, url_for
-from crud import read_md, create_md, update_md, Path
+from crud import read_md, create_md, update_md, Path, delete_md
 import logging, json, requests
 
 app = Flask(__name__)
@@ -18,7 +18,9 @@ def project(project):
     json_data = json.dumps(dict_data)
     req = requests.post(url, data=json_data)
     output = req.content.decode('utf-8')
-
+    if output.strip() == '':
+        delete_md(project)
+        return render_template('error.html', warn='This Project was deleted!')
     return render_template('project.html', title=title, html=output, md=read_md(project))
 
 @app.route('/find')
@@ -31,13 +33,13 @@ def find():
 
 @app.route('/')
 def home():
-    dict_data =  {"text":read_md('default/welcome.md')}
-    json_data = json.dumps(dict_data)
-    req = requests.post(url, data=json_data)
-    output = req.content.decode('utf-8')
-
-    return render_template('index.html', welcome=output)
-
+    files = Path('./projects')
+    output = []
+    for file in files.glob('*'):
+        output.append(str(file.name))
+        if file.name == 'default':
+            output.pop()
+    return render_template('welcome.html', projects=output)
 
 @app.route('/about')
 def about():
