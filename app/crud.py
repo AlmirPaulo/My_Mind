@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 
 
-PROJECTS = Path('./projects')
+PROJECTS = Path('./app/projects')
 # CONFIG = Path('config.json')
 
 def read_md(file):
@@ -21,5 +21,5 @@ def update_md(file, text):
     return f.write(text)
 
 def delete_md(file):
-    return os.remove(f'./projects/{file}')
+    return os.remove(f'./app/projects/{file}')
     

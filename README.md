@@ -10,14 +10,26 @@ A self-hosted project management app. It's totally inspired on Notion, but with 
 
 <!--Check here the live sample in a repl--
 
+## Dependencies
 
-## Download
+Only Python3
+
+## Installing
+
+Download or clone this repository.
 
 ## How to Use
 
-There is no need of installation, just click the executable and a window will appear alearting you the app is running. Do NOT close this window until you have done!
+Run the "Run.py" script, as any other. 
+
+        ./run.py
+
+        python run.py
+
+You can rename it any way you want if you wish.
 
 Now you can visit "http://localhost:5123" to see a page like this:
+
 
 <!--image--
 
@@ -42,5 +54,8 @@ The rest of the functionalities is pretty intuitives once you know some Markdown
 
 ## Contribute
 
+## Releases
 
+### 0.0.1 - 
+ First Release
 

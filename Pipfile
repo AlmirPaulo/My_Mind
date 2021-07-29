@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 simple-websocket = "*"
-flask = "*"
+Flask = "*"
 requests = "*"
-pysimplegui = "*"
-flask-cors = "*"
+PySimpleGUI = "*"
+Flask-Cors = "*"
 
 [dev-packages]
 

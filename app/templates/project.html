@@ -7,17 +7,23 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <div id="project" class="container">
+    <div class="row">
+        <div class="col">
+            <div id="project" class="container">
 
-        {{ html }}
+                {{ html }}
 
+            </div>
+        </div>
+        <div class="col">
+            <form method="POST">
+                <textarea id="editor" name="editor" cols="50" rows="100">
+                    {{ md }}
+                </textarea>
+                <button class="btn btn-primary" onclick="edit()">Edit</button>
+            </form>
+        </div>
     </div>
-    <form method="POST">
-        <textarea id="editor" name="editor" cols="100" rows="10">
-            {{ md }}
-        </textarea>
-        <button class="btn btn-primary" onclick="edit()">Edit</button>
-    </form>
 </div>
 <script>
     //render Markdown
