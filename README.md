@@ -32,7 +32,7 @@ Now you can visit "http://localhost:5123" to see a page like this:
 
 ![screen](https://raw.githubusercontent.com/AlmirPaulo/My_Mind/main/screen.png)
 
-The rest of the functionalities is pretty intuitives once you know some Markdown and have some experience with Notion like apps. For further instructions check the User Manual. 
+The rest of the functionalities is pretty intuitives once you know some Markdown and have some experience with Notion like apps. For further instructions check the User Guide. 
 
 ## Technologies
 
