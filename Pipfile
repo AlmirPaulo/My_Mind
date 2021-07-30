@@ -4,11 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-simple-websocket = "*"
 Flask = "*"
 requests = "*"
-PySimpleGUI = "*"
-Flask-Cors = "*"
 
 [dev-packages]
 
