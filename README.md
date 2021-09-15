@@ -59,7 +59,9 @@ There are many ways to contribute to this project and with my work.
 * You can tell your friends about it. 
 * You can fork this repository.
 * You can pull request me any time.
-* You can buy me a coffee once in a while. (button here soon...)
+* You can buy me a coffee once in a while. 
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C26878E)
 
 ## Releases
 
